@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-md-6 my-5 text-center">
+        <h1>PDF To Speech</h1>
+        (Limited convertions to 50 characters for Demo purpose)
+      </div>
+            <!-- ================== DARK/LIGHT MODE ================== -->
+      <div class="col-md-3 center-items">
+        <div class="col-md-1 offset-md-11 my-5">
+          <a type="button" id="theme-toggle" style="font-size: 1.5rem;">🌗</a>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div id="drop-zone" class="col-md-6">
+        <strong>Drop PDF here</strong>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 center-items">
+        <img id="loading" src="static\images\Spin@1x-1.0s-200px-200px.gif" alt="Loading..." class="img-fluid" style="display: none; transform: scale(.5)"/>
+      </div>
+    </div>
+    <div class="row justify-content-center my-3">
+      <div class="col-md-6 text-center">
+        <input type="file" id="file-input" accept=".pdf" class="form-control" hidden/>
+      </div>
+    </div>
+    <div class="row justify-content-center my-3">
+      <div id="player" class="col-md-6 offset-md-3">
+        <audio id="audio" controls></audio>
+        <a id="download-link" download="tts_output.mp3" href="" class="mx-2 download-btn text-center"><i class="bi bi-download"></i></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
