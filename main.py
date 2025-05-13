@@ -2,7 +2,7 @@ import io
 from flask import Flask, render_template, jsonify, request
 import flask
 from flask_bootstrap import Bootstrap5
-import fitz
+import fitz # PyMuPDF
 from zyphra import ZyphraClient
 import datetime as dt
 import os
