@@ -2,7 +2,7 @@ import io
 from flask import Flask, render_template, jsonify, request
 import flask
 from flask_bootstrap import Bootstrap5
-import fitz # PyMuPDF
+import pymupdf # PyMuPDF
 from zyphra import ZyphraClient
 import datetime as dt
 import os
@@ -14,7 +14,7 @@ Bootstrap5(app)
 
 # ======== PDF TEXT EXTRACTION ========
 def extract_pdf_text(file):
-    doc = fitz.open(stream=file.read(), filetype='pdf')
+    doc = pymupdf.open(stream=file.read(), filetype='pdf')
     pdf_text = ''
     for page in doc:
         pdf_text += page.get_text()
